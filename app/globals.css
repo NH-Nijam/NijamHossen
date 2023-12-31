@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  @apply max-w-[2560px] mx-auto 
+}
+
+.backColor {
+  @apply bg-gray-900
+}
+@layer utilities {
+  .nav{
+    @apply relative   
+     hover:text-orange-600 duration-500 text-xl 
+  }
+  .nav::after{
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 -bottom-[10px] rounded-full duration-500
+  }
+  .nav:hover::after{
+    @apply w-[100%]
+  }
+   
+}
