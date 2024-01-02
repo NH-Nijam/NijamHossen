@@ -47,7 +47,7 @@ const Navbar = () => {
     ]
     // nav array end
     return (
-        <header className=' backColor border-b-2 border-gray-600'>
+        <header className=' sticky top-0 z-10 backColor border-b-2 border-gray-600'>
             <nav className='container md:px-10 px-3 h-[60px] flex items-center justify-between '>
                 <div>
                     <Link href="/">
@@ -74,15 +74,15 @@ const Navbar = () => {
 
                 {/* small device start */}
 
-                <div onClick={handler} className='cursor-pointer flex items-center lg:hidden'>
+                <div onClick={handler} className='cursor-pointer lg:hidden'>
                     <FaBars size={30} />
                     <div className={
-                        show ? 'fixed left-0 top-0 w-[100%] h-screen backColor px-10 ease-in duration-500'
+                        show ? 'fixed left-0 top-0  w-[100%] h-screen backColor px-10 ease-in duration-500'
                             :
                             'fixed left-[-100%] top-0  h-screen ease-out duration-500'
                     }>
-                        <div onClick={handler} className='cursor-pointer pt-2'>
-                            <div className='flex items-center justify-between '>
+                        <div onClick={handler} className='cursor-pointer '>
+                            <div className='flex items-center justify-between h-[60px] border  '>
                                 <Link href="/">
                                     <i className='flex gap-2 text-[30px] font-bold '>
                                         <span className='text-orange-600'>Nijam</span>

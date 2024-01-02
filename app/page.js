@@ -1,9 +1,10 @@
 import React from 'react';
+import Herosection from './components/Herosection';
 
 const page = () => {
   return (
     <div className='container'>
-      This is Home page
+      <Herosection/>
     </div>
   );
 };
