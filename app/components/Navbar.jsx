@@ -82,7 +82,7 @@ const Navbar = () => {
                             'fixed left-[-100%] top-0  h-screen ease-out duration-500'
                     }>
                         <div onClick={handler} className='cursor-pointer '>
-                            <div className='flex items-center justify-between h-[60px] border  '>
+                            <div className='flex items-center justify-between h-[60px]   '>
                                 <Link href="/">
                                     <i className='flex gap-2 text-[30px] font-bold '>
                                         <span className='text-orange-600'>Nijam</span>
