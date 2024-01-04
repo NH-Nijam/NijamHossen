@@ -77,7 +77,7 @@ const Navbar = () => {
                 <div onClick={handler} className='cursor-pointer lg:hidden'>
                     <FaBars size={30} />
                     <div className={
-                        show ? 'fixed left-0 top-0  w-[100%] h-screen backColor px-10 ease-in duration-500'
+                        show ? 'fixed left-0 top-0  w-[100%] h-screen backColor md:px-10 px-3 ease-in duration-500'
                             :
                             'fixed left-[-100%] top-0  h-screen ease-out duration-500'
                     }>
