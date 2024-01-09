@@ -1,11 +1,12 @@
 import React from 'react';
-
-const Help = () => {
+import Nijam from '../img/nijam.png'
+import Image from 'next/image';
+const HelpPage = () => {
     return (
-        <div>
-            Help page
+        <div className='container h-screen flex items-center justify-center'>
+            
         </div>
     );
 };
 
-export default Help;
+export default HelpPage;

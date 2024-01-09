@@ -18,34 +18,6 @@ const Navbar = () => {
     const handler = () => {
         setShow(!show)
     }
-    // nav array start
-    const Navbar = [
-        {
-            name: "Home",
-            link: "/"
-        },
-        {
-            name: "About",
-            link: "/About"
-        },
-        {
-            name: "Projects",
-            link: "/Projects"
-        },
-        {
-            name: "Skills",
-            link: "/Skills"
-        },
-        {
-            name: "Contact",
-            link: "/Contact"
-        },
-        {
-            name: "Help",
-            link: "/Help"
-        },
-    ]
-    // nav array end
     return (
         <header className=' sticky top-0 z-10 backColor border-b-2 border-gray-600'>
             <nav className='container md:px-10 px-3 h-[60px] flex items-center justify-between '>
@@ -58,18 +30,12 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className='lg:flex hidden gap-10 '>
-                    {
-                        Navbar.map(({ name, link }) => (
-                            <Link
-                                key={name}
-                                href={link}
-                                name={name}
-                                className={`${pathName === link ? 'text-orange-600 text-xl ' : 'nav'} `}
-                            >
-                                {name}
-                            </Link>
-                        ))
-                    }
+                    <Link className={`${pathName ==='/'? 'text-orange-600 text-xl':'hover:text-orange-600 duration-500 nav'}`} href="/">Home</Link>
+                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">About</Link>
+                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Skills</Link>
+                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Projects</Link>
+                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Contact</Link>
+                    <Link className={`${pathName ==='/Help'? 'text-orange-600 text-xl':'hover:text-orange-600 duration-500 nav'}`} href="/Help">Help</Link>
                 </div>
 
                 {/* small device start */}

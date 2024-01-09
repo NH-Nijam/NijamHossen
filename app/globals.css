@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  @apply max-w-[2560px] mx-auto 
+  @apply max-w-[1440px] mx-auto 
 }
 
 .backColor {
@@ -29,3 +29,4 @@ body {
   }
    
 }
+  
