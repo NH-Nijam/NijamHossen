@@ -1,12 +1,11 @@
 'use client'
-
 import Navbar from "../components/Navbar";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
         <div>
-            <Navbar/>
-            {children}
+                <Navbar />
+                {children}
         </div>
     );
 };

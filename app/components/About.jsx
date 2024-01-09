@@ -10,6 +10,7 @@ import { FaPinterestP } from "react-icons/fa6";
 import Image from 'next/image';
 import Nijam from '../img/nijam.png'
 const Aboutpage = () => {
+   
     const Me = [
         'Web Developer',
         'Front-end Developer',
@@ -33,33 +34,33 @@ const Aboutpage = () => {
                     </Link>
                     <Link href='#'>
                         <div className='2xl:w-[60px] 2xl:h-[60px] md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md shadow-orange-600 rounded-full hover:scale-110 duration-500 flex justify-center items-center'>
-                            <FaFacebookF  className='2xl:text-4xl md:text-3xl text-2xl' />
+                            <FaFacebookF className='2xl:text-4xl md:text-3xl text-2xl' />
                         </div>
                     </Link>
                     <Link href='#'>
                         <div className='2xl:w-[60px] 2xl:h-[60px] md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md shadow-orange-600 rounded-full hover:scale-110 duration-500 flex justify-center items-center'>
-                            <FaLinkedinIn  className='2xl:text-4xl md:text-3xl text-2xl' />
+                            <FaLinkedinIn className='2xl:text-4xl md:text-3xl text-2xl' />
                         </div>
                     </Link>
                     <Link href='#'>
                         <div className='2xl:w-[60px] 2xl:h-[60px] md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md shadow-orange-600 rounded-full hover:scale-110 duration-500 flex justify-center items-center'>
-                            <FaPinterestP  className='2xl:text-4xl md:text-3xl text-2xl' />
+                            <FaPinterestP className='2xl:text-4xl md:text-3xl text-2xl' />
                         </div>
                     </Link>
                 </div>
                 <div className='mt-5'>
                     <Link href='#'>
                         <div className='shadow-md shadow-orange-600 lg:px-10 lg:py-3 md:px-8 md:py-2 py-1 px-5 2xl:text-2xl md:text-xl hover:bg-orange-600 hover:shadow-none duration-500 rounded-md font-semibold hover:text-[#111827] hover:scale-110 inline-block'>
-                        <button className=''>Resume</button>
-                        </div> 
+                            <button className=''>Resume</button>
+                        </div>
                     </Link>
                 </div>
             </div>
 
             {/* image start  */}
             <div className='lg:w-1/2 w-full flex justify-center items-center'>
-                <div className='box 2xl:w-[500px] 2xl:h-[500px] md:w-[450px] md:h-[450px] w-[450px] h-[450px] inset-x-[]'>
-                    <div className='content overflow-hidden'>
+                <div className='box 2xl:w-[500px] 2xl:h-[500px] md:w-[450px] md:h-[450px]  duration-500'>
+                    <div className='content'>
                         <Image src={Nijam} width={500} height={500} alt='Nijam Hossen' ></Image>
                     </div>
                 </div>

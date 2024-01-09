@@ -31,7 +31,7 @@ const Navbar = () => {
                 </div>
                 <div className='lg:flex hidden gap-10 '>
                     <Link className={`${pathName ==='/'? 'text-orange-600 text-xl':'hover:text-orange-600 duration-500 nav'}`} href="/">Home</Link>
-                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">About</Link>
+                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#" onClick={''}>About</Link>
                     <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Skills</Link>
                     <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Projects</Link>
                     <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Contact</Link>

@@ -39,20 +39,24 @@ body {
   content: '';
   position: absolute;
   inset: -20px 150px;
-  background: linear-gradient(0deg, #EA580C, blue);
+  background: linear-gradient(0deg, #EA580C, red);
   animation: animate linear 4s infinite;
   z-index: 1;
 }
+
 .box:hover::before{
-  inset: -20px -10px;
+  inset: -10px -10px;
 }
 .content{
   position: absolute;
-  inset: 30px;
+  inset: 15px;
   border-radius: 50%;
-  background-color: white;
+  border: 10px solid white;
+  background:linear-gradient(120deg, green , orange,blue,yellow, white, black);
   z-index:2;
+  overflow: hidden;
 }
+
 
 @keyframes animate {
   0%{
@@ -63,4 +67,35 @@ body {
   }
 }
 
+/* small device start  */
+@media screen and (max-width: 767px) {
+  .box{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .box::before{
+    content: '';
+    position: absolute;
+    inset: -20px 100px;
+    background: linear-gradient(0deg, #EA580C, red);
+    animation: animate linear 4s infinite;
+    z-index: 1;
+  }
   
+  .box:hover::before{
+    inset: -10px -10px;
+  }
+  .content{
+    position: absolute;
+    border-radius: 50%;
+    background:linear-gradient(120deg, green , orange,blue,yellow, white, black);
+    z-index:2;
+    border: 10px solid white;
+  }
+  
+}
+  /* small device end  */
