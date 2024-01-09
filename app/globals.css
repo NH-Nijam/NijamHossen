@@ -29,4 +29,38 @@ body {
   }
    
 }
+.box{
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.box::before{
+  content: '';
+  position: absolute;
+  inset: -20px 150px;
+  background: linear-gradient(0deg, #EA580C, blue);
+  animation: animate linear 4s infinite;
+  z-index: 1;
+}
+.box:hover::before{
+  inset: -20px -10px;
+}
+.content{
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  background-color: white;
+  z-index:2;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
   
