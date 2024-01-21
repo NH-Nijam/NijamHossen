@@ -3,7 +3,7 @@ import Aboutpage from './components/About';
 
 const page = () => {
   return (
-    <div className='container'>
+    <div>
       <Aboutpage/>
     </div>
   );

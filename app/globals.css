@@ -1,101 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 0.5rem;
+  }
 
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 20.5 90.2% 48.2%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 20.5 90.2% 48.2%;
+  }
 }
 
-.container {
-  @apply max-w-[1440px] mx-auto 
-}
-
-.backColor {
-  @apply bg-gray-900
-}
 @layer utilities {
   .nav{
-    @apply relative   
-     hover:text-orange-600 duration-500 text-xl 
+    @apply relative  text-xl ;
   }
   .nav::after{
-    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 -bottom-[10px] rounded-full duration-500
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 -bottom-3 rounded-full duration-500
   }
   .nav:hover::after{
     @apply w-[100%]
   }
-   
-}
-.box{
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-.box::before{
-  content: '';
-  position: absolute;
-  inset: -20px 150px;
-  background: linear-gradient(0deg, #EA580C, red);
-  animation: animate linear 4s infinite;
-  z-index: 1;
-}
-
-.box:hover::before{
-  inset: -10px -10px;
-}
-.content{
-  position: absolute;
-  inset: 15px;
-  border-radius: 50%;
-  border: 10px solid white;
-  background:linear-gradient(120deg, green , orange,blue,yellow, white, black);
-  z-index:2;
-  overflow: hidden;
-}
-
-
-@keyframes animate {
-  0%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
-}
-
-/* small device start  */
-@media screen and (max-width: 767px) {
-  .box{
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .box::before{
-    content: '';
-    position: absolute;
-    inset: -20px 100px;
-    background: linear-gradient(0deg, #EA580C, red);
-    animation: animate linear 4s infinite;
-    z-index: 1;
-  }
-  
-  .box:hover::before{
-    inset: -10px -10px;
-  }
-  .content{
-    position: absolute;
-    border-radius: 50%;
-    background:linear-gradient(120deg, green , orange,blue,yellow, white, black);
-    z-index:2;
-    border: 10px solid white;
-  }
   
 }
-  /* small device end  */
+
+@layer utilities{
+  .dav{
+    @apply text-orange-600 text-xl font-bold relative;   
+  }
+  .dav::after{
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 -bottom-3 rounded-full duration-500
+  }
+}

@@ -11,9 +11,14 @@ import { GiSkills } from "react-icons/gi";
 import { FaHandsHelping } from "react-icons/fa";
 import { RiProfileFill } from "react-icons/ri";
 
+import { IoIosSunny } from "react-icons/io";
+import { useTheme } from 'next-themes';
+
+
 
 const Navbar = () => {
     const [show, setShow] = useState(false)
+    const {theme, setTheme} =useTheme();
     const pathName = usePathname()
     const handler = () => {
         setShow(!show)
@@ -30,22 +35,25 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className='lg:flex hidden gap-10 '>
-                    <Link className={`${pathName ==='/'? 'text-orange-600 text-xl':'hover:text-orange-600 duration-500 nav'}`} href="/">Home</Link>
-                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#" onClick={''}>About</Link>
-                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Skills</Link>
-                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Projects</Link>
-                    <Link className={`hover:text-orange-600 duration-500 nav`} href="#">Contact</Link>
-                    <Link className={`${pathName ==='/Help'? 'text-orange-600 text-xl':'hover:text-orange-600 duration-500 nav'}`} href="/Help">Help</Link>
+                    <Link className={`${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
+                    
+                    <Link className={`${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/MyProjects">My Projects</Link>
+                    <Link  className={`${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/Contact">Contact</Link>
                 </div>
 
-                {/* small device start */}
+{/* darkLight start  */}
+                <button onClick={() => setTheme(theme ==="dark" ? "light" : "dark")} className=' px-1 py-1 border rounded-2xl'>
+                    <IoIosSunny className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all  dark:-rotate-90 dark:scale-0 z-0'/>
+                </button>
+{/* darkLight end */}
 
+                {/* small device start */}
                 <div onClick={handler} className='cursor-pointer lg:hidden'>
                     <FaBars size={30} />
                     <div className={
-                        show ? 'fixed left-0 top-0  w-[100%] h-screen backColor md:px-10 px-3 ease-in duration-500'
+                        show ? `fixed left-0 top-0 ${theme === 'dark' ? 'bg-black':'bg-white'}  w-[100%]  h-screen md:px-10 px-3 ease-in duration-500`
                             :
-                            'fixed left-[-100%] top-0  h-screen ease-out duration-500'
+                            `fixed left-[-100%] top-0  h-screen ease-out duration-500`
                     }>
                         <div onClick={handler} className='cursor-pointer '>
                             <div className='flex items-center justify-between h-[60px]   '>
@@ -61,7 +69,7 @@ const Navbar = () => {
                             <div className='mt-16  flex gap-10 flex-col text-2xl'>
                                 <div className={`${pathName === "/" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
                                     <FaHome />
-                                    <Link href="/">Home</Link>
+                                    <Link className={`${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
                                 </div>
                                 <div className={`${pathName === "/About" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
                                     <RiProfileFill />

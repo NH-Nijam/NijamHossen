@@ -61,7 +61,7 @@ const Aboutpage = () => {
             <div className='lg:w-1/2 w-full flex justify-center items-center'>
                 <div className='box 2xl:w-[500px] 2xl:h-[500px] md:w-[450px] md:h-[450px]  duration-500'>
                     <div className='content'>
-                        <Image src={Nijam} width={500} height={500} alt='Nijam Hossen' ></Image>
+                        {/* <Image src={Nijam} width={500} height={500} alt='Nijam Hossen' ></Image> */}
                     </div>
                 </div>
             </div>
