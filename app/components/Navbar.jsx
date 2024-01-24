@@ -57,16 +57,13 @@ const Navbar = () => {
 
                     <div onClick={handler} className='cursor-pointer lg:hidden relative'>
                         <FaBars size={30} />
-                        
-                        <div className={
-                            show ? `fixed left-0 top-0 ${theme === 'dark' ? 'bg-black text-white shadow-md shadow-white' : 'bg-white text-black shadow-md shadow-black'}  md:w-[50%] w-[70%] z-10 h-screen md:px-10 px-3 ease-in duration-500 `
-                                :
-                                `fixed left-[-50%] top-0  h-screen ease-out duration-500`
-                        }>
-                            <div className={show? 'absolute w-screen bg-black opacity-85 h-screen top-0 left-0 z-0':''}>
 
-                            </div>
-                            <div onClick={handler} className='cursor-pointer relative '>
+                        <div className={
+                            show ? `fixed left-0 top-0 ${theme === 'dark' ? 'bg-black text-white shadow-md shadow-white' : 'bg-white text-black shadow-md shadow-black'}  md:w-[40%] w-[70%]  h-screen md:px-10 px-3 ease-in duration-500 `
+                                :
+                                `fixed left-[-100%] top-0  h-screen ease-out duration-500`
+                        }>
+                            <div onClick={handler} className='cursor-pointer '>
                                 <div className='flex items-center justify-end h-[60px]   '>
                                     <IoClose size={30} />
 
