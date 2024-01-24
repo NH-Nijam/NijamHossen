@@ -1,23 +1,25 @@
 'use client'
 import Link from 'next/link';
-// icons start 
+import Image from 'next/image';
 import { Typewriter } from 'react-simple-typewriter'
+// icons start 
 import { FiGithub } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa6";
 // iconts end 
-import Image from 'next/image';
+// header image start
 import Nijam from '../img/nijam.png'
+// header image emd
 const Aboutpage = () => {
-   
+
     const Me = [
         'Web Developer',
         'Front-end Developer',
         'React Developer',
     ]
     return (
-        <div className="container lg:h-screen flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center justify-between md:px-10 px-3">
+        <div className="z-0 lg:h-screen flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center justify-between lg:px-0 md:px-10 px-3">
             <div className="lg:w-1/2 w-full flex flex-col gap-5 text-center lg:text-start">
                 <h3 className="text-base md:text-xl 2xl:text-3xl ">Let'<span className="text-orange-600">s</span> create something new <span className='text-orange-600'>!!!</span> </h3>
                 <h1 className="flex flex-col text-3xl md:text-5xl 2xl:text-7xl md:gap-4 gap-1 font-bold">
@@ -59,9 +61,14 @@ const Aboutpage = () => {
 
             {/* image start  */}
             <div className='lg:w-1/2 w-full flex justify-center items-center'>
-                <div className='box 2xl:w-[500px] 2xl:h-[500px] md:w-[450px] md:h-[450px]  duration-500'>
+                <div className='box '>
                     <div className='content'>
-                        {/* <Image src={Nijam} width={500} height={500} alt='Nijam Hossen' ></Image> */}
+                        <Image className='img' src={Nijam} width={500} height={500} alt='Nijam Hossen' />
+                        <div className='flex gap-4 flex-col '>
+                            <h1 className='text-white text-xl font-bold'>MD: Nijam Hossen</h1>
+                            <h1 className='text-white text-xl font-bold'>Front-end Developer</h1>
+                            <Link href='#' className='text-base text-orange-600 underline'>Hire Me</Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,13 +3,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaBars } from "react-icons/fa6";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
 import { FaDiagramProject } from "react-icons/fa6";
 import { RiContactsBookFill } from "react-icons/ri";
-import { GiSkills } from "react-icons/gi";
-import { FaHandsHelping } from "react-icons/fa";
-import { RiProfileFill } from "react-icons/ri";
+
 
 import { IoIosSunny } from "react-icons/io";
 import { useTheme } from 'next-themes';
@@ -24,12 +22,12 @@ const Navbar = () => {
         setShow(!show)
     }
     return (
-        <header className=' sticky top-0 z-10 backColor border-b-2 border-gray-600'>
-            <nav className='container md:px-10 px-3 h-[60px] flex items-center justify-between '>
+        <header className=' sticky top-0 z-10 backColor border-b-2 border-gray-600 bg-gray-950 text-white'>
+            <nav className='container md:px-10 px-3  h-[60px] flex items-center justify-between '>
                 <div>
                     <Link href="/">
                         <i className='flex gap-2 text-[30px] font-bold '>
-                            <span className='text-orange-600'>Nijam</span>
+                            <span className='text-orange-600 '>Nijam</span>
                             <span>Hossen</span>
                         </i>
                     </Link>
@@ -42,35 +40,35 @@ const Navbar = () => {
                 </div>
 
                 {/* darkLight start  */}
-                <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className=' px-1 py-1  rounded-2xl lg:flex lg:items-center hidden'>
+                <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className=' px-1 py-1 rounded-2xl lg:flex lg:items-center hidden'>
                     <IoIosSunny size={30} />
                 </button>
                 {/* darkLight end */}
 
 
                 {/* small device start */}
-                <div className=' flex gap-5'>
+                <div className=' lg:hidden flex gap-5  '>
+
                     {/* small device darkLight start  */}
-                    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className=' px-1 py-1  rounded-2xl lg:hidden flex items-center justify-center'>
-                        <IoIosSunny size={25}/>
+                    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className=' px-1 py-1 rounded-2xl l flex items-center justify-center'>
+                        <IoIosSunny size={25} />
                     </button>
                     {/* small device darkLight end */}
-                    <div onClick={handler} className='cursor-pointer lg:hidden'>
+
+                    <div onClick={handler} className='cursor-pointer lg:hidden relative'>
                         <FaBars size={30} />
+                        
                         <div className={
-                            show ? `fixed left-0 top-0 ${theme === 'dark' ? 'bg-black' : 'bg-white'}  w-[100%]  h-screen md:px-10 px-3 ease-in duration-500`
+                            show ? `fixed left-0 top-0 ${theme === 'dark' ? 'bg-black text-white shadow-md shadow-white' : 'bg-white text-black shadow-md shadow-black'}  md:w-[50%] w-[70%] z-10 h-screen md:px-10 px-3 ease-in duration-500 `
                                 :
-                                `fixed left-[-100%] top-0  h-screen ease-out duration-500`
+                                `fixed left-[-50%] top-0  h-screen ease-out duration-500`
                         }>
-                            <div onClick={handler} className='cursor-pointer '>
-                                <div className='flex items-center justify-between h-[60px]   '>
-                                    <Link href="/">
-                                        <i className='flex gap-2 text-[30px] font-bold '>
-                                            <span className='text-orange-600'>Nijam</span>
-                                            <span>Hossen</span>
-                                        </i>
-                                    </Link>
-                                    <FaBarsStaggered size={30} />
+                            <div className={show? 'absolute w-screen bg-black opacity-85 h-screen top-0 left-0 z-0':''}>
+
+                            </div>
+                            <div onClick={handler} className='cursor-pointer relative '>
+                                <div className='flex items-center justify-end h-[60px]   '>
+                                    <IoClose size={30} />
 
                                 </div>
                                 <div className='mt-16  flex gap-10 flex-col text-2xl'>
@@ -78,26 +76,17 @@ const Navbar = () => {
                                         <FaHome />
                                         <Link className={`${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
                                     </div>
-                                    <div className={`${pathName === "/About" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <RiProfileFill />
-                                        <Link href="/About">About</Link>
-                                    </div>
-                                    <div className={`${pathName === "/Projects" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
+
+                                    <div className={`${pathName === "/MyProjects" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
                                         <FaDiagramProject />
-                                        <Link href="/Projects">Projects</Link>
+                                        <Link className={`${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/MyProjects">My Projects</Link>
                                     </div>
-                                    <div className={`${pathName === "/Skills" ? 'text-orange-600 b flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <GiSkills />
-                                        <Link href="/Skills">Skills</Link>
-                                    </div>
+
                                     <div className={`${pathName === "/Contact" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
                                         <RiContactsBookFill />
-                                        <Link href="/Contact">Contact</Link>
+                                        <Link className={`${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/Contact">Contact</Link>
                                     </div>
-                                    <div className={`${pathName === "/Help" ? 'text-orange-600 border-b-[2px] border-orange-600 flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <FaHandsHelping />
-                                        <Link href="/Help">Help</Link>
-                                    </div>
+
 
                                 </div>
                             </div>
