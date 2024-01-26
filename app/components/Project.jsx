@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const Project = ({img, title, description, techno}) => {
+const Project = ({img, title, description, techno, live, repo}) => {
     return (
         <div className=' 2xl:h-[400px] rounded-lg group relative overflow-hidden shadow-lg  shadow-orange-600 hover:scale-105 duration-500 hover:shadow-none'>
             <Image src={img} width={500} height={500} alt='project' className='w-full h-full absolute rounded-lg'/>
@@ -12,8 +12,8 @@ const Project = ({img, title, description, techno}) => {
                 <p className=' text-white '>{description}</p>
                 <h2 className='mt-10 text-xl font-semibold'>Used Technology: {techno}</h2>
                 <div className='grid md:grid-cols-2 gap-10 mt-5 text-black'>
-                    <Link href='#'><button className='bg-white text-light py-2 text-2xl font-bold rounded-lg w-full h-full hover:bg-gray-900 hover:text-white hover:scale-105 duration-500'>Live</button></Link>
-                    <Link href='#'><button className='bg-white text-light py-2 text-2xl font-bold rounded-lg w-full h-full hover:bg-gray-900 hover:text-white hover:scale-105 duration-500'>Repository</button></Link>
+                    <Link href={live} target='blank'><button className='bg-white text-light py-2 text-2xl font-bold rounded-lg w-full h-full hover:bg-gray-900 hover:text-white hover:scale-105 duration-500'>Live</button></Link>
+                    <Link href={repo} target='blank'><button className='bg-white text-light py-2 text-2xl font-bold rounded-lg w-full h-full hover:bg-gray-900 hover:text-white hover:scale-105 duration-500'>Repository</button></Link>
                 </div>
             </div>
         </div>
