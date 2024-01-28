@@ -9,6 +9,7 @@ const page = () => {
       <Aboutpage/>
       <Skill/>
       <Projects/>
+   
     </div>
   );
 };
