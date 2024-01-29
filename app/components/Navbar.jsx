@@ -22,7 +22,9 @@ const Navbar = () => {
         setShow(!show)
     }
     return (
-        <header className='navbar sticky top-0 navbar-expand-lg z-10  border-b-2 border-gray-600 bg-gray-950 text-white'>
+        <header 
+        data-aos="fade-down"
+        className='navbar sticky top-0 navbar-expand-lg z-10  border-b-2 border-gray-600 bg-gray-950 text-white'>
             <nav className='container md:px-10 px-3  h-[60px] flex items-center justify-between '>
                 <div>
                     <Link href="/">

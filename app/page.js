@@ -1,13 +1,16 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Aboutpage from './components/About';
 import Skill from './components/Skill';
 import Projects from './components/Projects';
 import ContactPage from './components/Contact';
 import { FloatButton } from 'antd';
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const page = () => {
+  
   return (
     <div>
       <Aboutpage/>

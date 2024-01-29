@@ -1,10 +1,11 @@
 'use clinet'
 import React from 'react';
+import ContactPage from '../components/Contact';
 
 const Contact = () => {
     return (
         <div>
-            conatct
+            <ContactPage/>
         </div>
     );
 };

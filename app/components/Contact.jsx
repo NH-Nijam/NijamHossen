@@ -26,11 +26,11 @@ const ContactPage = () => {
         console.log(user);
     } 
     return (
-        <div className='my-40 '>
-            <h1 className='text-3xl font-semibold text-center decoration-wavy underline tracking-[3px] '>Contact Me</h1>
+        <div className='my-20 '>
+            <h1 data-aos="fade-down" className='text-3xl font-semibold text-center decoration-wavy underline tracking-[3px] '>Contact Me</h1>
             <div className='mt-20 flex lg:flex-row flex-col gap-10  justify-center items-center'>
                 {/* 1st part start  */}
-                <div className='lg:w-2/5  w-full md:p-10 p-4 shadow-lg shadow-orange-600 rounded-b-xl'>
+                <div data-aos="fade-right" className=' lg:w-2/5  w-full md:p-10 p-4 shadow-lg shadow-orange-600 rounded-b-xl'>
                     <div className='w-full md:h-[300px] rounded-lg'>
                         <Image src={contactImg} width={500} height={500} alt='image not found' className='hover:scale-105 duration-500 rounded-lg w-full h-full' />
                     </div>
@@ -68,7 +68,7 @@ const ContactPage = () => {
                 {/* 1st part end  */}
 
                 {/* 2nd part start  */}
-                <div className={`w-full p-10 shadow-lg shadow-orange-600 rounded-b-xl `}>
+                <div data-aos="fade-left" className={`w-full p-10 shadow-lg shadow-orange-600 rounded-b-xl `}>
                     <form onSubmit={formHandler} className='flex flex-col gap-5'>
                         <div className='grid md:grid-cols-2 gap-5'>
                             <div className='flex flex-col gap-2'>
@@ -90,7 +90,7 @@ const ContactPage = () => {
                         </div>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="Message">Message</label>
-                            <textarea name="message"  cols="30" rows="10" className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2 focus:outline-none'/>
+                            <textarea name="message"  placeholder='Type mess ..' cols="30" rows="10" className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2 focus:outline-none'/>
                         </div>
                         <button type='submit' className='bg-orange-600 rounded-md p-3 text-xl font-semibold text-white'>Send Message</button>
                     </form>
