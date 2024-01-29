@@ -55,7 +55,7 @@
     @apply relative  text-xl ;
   }
   .nav::after{
-    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 -bottom-3 rounded-full duration-500
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500
   }
   .nav:hover::after{
     @apply w-[100%]
@@ -68,98 +68,6 @@
     @apply text-orange-600 text-xl font-bold relative;   
   }
   .dav::after{
-    @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 -bottom-3 rounded-full duration-500
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500
   }
 }
-@layer utilities{
-  .box{
-    @apply overflow-hidden relative 2xl:w-[450px] 2xl:h-[450px]  md:w-[400px] md:h-[400px] top-8 lg:top-0  rounded-full h-[200px] w-[200px]
-  }
-  .box::before{
-    content: '';
-    position: absolute;
-    inset: -10px 80px;
-    background: linear-gradient(315deg, #EA580C, blue);
-    transition: 0.5s;
-    animation: animate 4s linear infinite;
-  }
-  .box:hover::before{
-    inset: -20px 0px;
-  }
-  .box::after{
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    inset: 10px;
-    background: #121212;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  .content{
-    position: absolute;
-    inset: 10px;
-    border: 6px solid gold;
-    z-index: 3;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: .5s;
-    text-align: center;
-    background: linear-gradient(45deg , orange, red, yellow, green, blue, gray);
-
-  }
-  
-  .content .img{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 100%;
-    object-fit: cover;
-    background: linear-gradient(45deg , orange, red, yellow, green, blue, gray, white,black);
-
-  }
-  .content:hover img{
-    opacity: 0%;
-    transition: .5s;
-  }
-  
-  
-
-  @keyframes animate {
-    0%{
-      transform: rotate(0deg);
-    }
-    100%{
-      transform: rotate(316deg);
-    }
-  }
-
-  @media screen and (max-width:767px) {
-    .box::before{
-      content: '';
-      position: absolute;
-      inset: -10px 40px;
-      background: linear-gradient(315deg, #EA580C, blue);
-      transition: 0.5s;
-      animation: animate 4s linear infinite;
-    }
-    .box:hover::before{
-      inset: -20px 0px;
-    }
-    .box::after{
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      inset: 10px;
-      background: #121212;
-      border-radius: 50%;
-      z-index: 1;
-    }
-  }
-}
-

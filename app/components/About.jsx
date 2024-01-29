@@ -72,53 +72,53 @@ const Aboutpage = () => {
                     modules={[EffectCards]}
                     className="md:w-[400px] md:h-[500px] w-[200px] h-[300px]"
                 >
-                    <SwiperSlide className='bg-red-600 rounded-lg p-5 '>
+                    <SwiperSlide className='bg-red-600 rounded-lg md:p-5 p-3 '>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>Web-Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-blue-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-blue-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>Front-end Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-orange-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-orange-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>React Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-yellow-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-yellow-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>Web-Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-sky-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-sky-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>Front-end Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-cyan-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-cyan-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>React Developer</span>
                         </h3>
                     </SwiperSlide>
-                    <SwiperSlide className='bg-green-600 rounded-lg p-5'>
+                    <SwiperSlide className='bg-green-600 rounded-lg md:p-5 p-3'>
                         <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
-                            <span className='text-2xl font-semibold'>MD.Nijam Hossen</span>
-                            <span className='text-xl font-medium'>Web-Developer</span>
+                            <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
+                            <span className='md:text-xl text-base font-medium'>Web-Developer</span>
                         </h3>   
                     </SwiperSlide>
                 </Swiper>
