@@ -108,6 +108,8 @@
     align-items: center;
     transition: .5s;
     text-align: center;
+    background: linear-gradient(45deg , orange, red, yellow, green, blue, gray);
+
   }
   
   .content .img{
@@ -118,7 +120,8 @@
     width: 80%;
     height: 100%;
     object-fit: cover;
-    background-color: #121212;
+    background: linear-gradient(45deg , orange, red, yellow, green, blue, gray, white,black);
+
   }
   .content:hover img{
     opacity: 0%;

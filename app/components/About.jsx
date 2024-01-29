@@ -65,9 +65,9 @@ const Aboutpage = () => {
                     <div className='content'>
                         <Image className='img' src={Nijam} width={500} height={500} alt='Nijam Hossen' />
                         <div className='flex gap-4 flex-col '>
-                            <h1 className='text-white text-xl font-bold'>MD: Nijam Hossen</h1>
-                            <h1 className='text-white text-xl font-bold'>Front-end Developer</h1>
-                            <Link href='#' className='text-base text-orange-600 underline'>Hire Me</Link>
+                            <h1 className='text-white text-xl md:text-2xl font-bold '>MD: Nijam Hossen</h1>
+                            <h1 className='text-white text-xl md:text-2xl font-bold'>Front-end Developer</h1>
+                            <Link href='#' className='text-base md:text-lg text-orange-600 underline' >Hire Me</Link>
                         </div>
                     </div>
                 </div>

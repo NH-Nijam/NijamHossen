@@ -1,14 +1,15 @@
 'use client'
+
 import Navbar from "../components/Navbar";
 
 const Layout = ({ children }) => {
+
     return (
         <div>
-                <Navbar />
-                <div className="container">
+            <Navbar />
+            <div className="container">
                 {children}
-                </div>
-                
+            </div>
         </div>
     );
 };
