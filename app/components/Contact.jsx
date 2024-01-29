@@ -68,16 +68,16 @@ const ContactPage = () => {
                 {/* 1st part end  */}
 
                 {/* 2nd part start  */}
-                <div data-aos="fade-left" className={`w-full p-10 shadow-lg shadow-orange-600 rounded-b-xl `}>
+                <div data-aos="fade-left" className={`w-full md:p-10 p-3 shadow-lg shadow-orange-600 rounded-b-xl `}>
                     <form onSubmit={formHandler} className='flex flex-col gap-5'>
                         <div className='grid md:grid-cols-2 gap-5'>
                             <div className='flex flex-col gap-2'>
                                 <label htmlFor="name">Name</label>
-                                <input type="text" name='name'  placeholder='Type Name' className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2  focus:outline-none' />
+                                <input type="text" name='name'  placeholder='Type Name' className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2 w-full focus:outline-none' />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <label htmlFor="number">Number</label>
-                                <input type="number" name='number'  placeholder='Number' className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2 focus:outline-none' />
+                                <input type="number" name='number'  placeholder='Number' className='border-2 border-gray-500 p-2 rounded-lg focus:border-green-600 focus:border-2 w-full focus:outline-none' />
                             </div>
                         </div>
                         <div className='flex flex-col gap-2'>
