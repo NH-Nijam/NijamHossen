@@ -14,7 +14,7 @@ const page = () => {
       <Skill/>
       <Projects/>
       <ContactPage/>
-      <FloatButton.BackTop icon={<MdOutlineKeyboardDoubleArrowUp /> } className='bg-orange-600'/>
+      <FloatButton.BackTop icon={<MdOutlineKeyboardDoubleArrowUp /> }/>
     </div>
   );
 };

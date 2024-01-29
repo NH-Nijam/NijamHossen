@@ -16,7 +16,7 @@ import firebase from '../icons/firebase.png'
 
 const Skill = () => {
     return (
-        <div className='mt-20'>
+        <div className='my-20'>
             <h1 className='text-3xl font-semibold text-center decoration-wavy underline tracking-[3px]'>My Skills</h1>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-6  mt-10'>
                 <SkillCard name='HTML' icons ={html}/>
