@@ -22,7 +22,7 @@ const Navbar = () => {
         setShow(!show)
     }
     return (
-        <header className={` sticky top-0  z-10  border-b-2 ${theme === 'light' ? 'border-gray-200 bg-gray-100 text-black opacity-90': 'border-gray-900 bg-black opacity-90 text-white'} `}>
+        <header className={` sticky top-0  z-10  border-b-2 ${theme === 'light' ? 'border-gray-200 bg-gray-100 text-black opacity-80': 'border-gray-900 bg-black opacity-80 text-white'} `}>
             <nav className='container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between '>
                 <div>
                     <Link href="/">

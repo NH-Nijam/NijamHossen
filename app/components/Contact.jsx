@@ -7,6 +7,8 @@ import { FiGithub } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa6";
+import Swal from 'sweetalert2'
+
 import Link from 'next/link';
 
 const ContactPage = () => {
@@ -24,6 +26,13 @@ const ContactPage = () => {
         form.reset()
         setMessage(user)
         console.log(user);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
     } 
     return (
         <div className='my-20 '>
