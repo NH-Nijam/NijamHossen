@@ -71,3 +71,22 @@
     @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500
   }
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+
+ /* profile section form  */
+.profile{
+    font-family: 'Libre Baskerville', serif;
+}
+.profile .ant-form-item-label{
+    @apply !text-lg !font-bold
+}
+.profile .ant-input{
+    @apply !px-3 !py-2 !rounded-none
+}
+.ant-btn{
+  @apply w-fit px-4 mt-4  border outline-none shadow-none bg-blue-600 text-white hover:bg-orange-600
+}
