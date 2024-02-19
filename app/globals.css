@@ -90,3 +90,30 @@
 .ant-btn{
   @apply w-fit px-4 mt-4  border outline-none shadow-none bg-blue-600 text-white hover:bg-orange-600
 }
+.bg1:hover{
+  @apply bg-[#7a63ec] text-white 
+}
+.bg2:hover{
+  @apply bg-[#ff6400] text-white 
+}
+
+
+/* animation start  */
+.animation{
+  position: relative;
+  animation: animate linear 2s infinite;
+}
+.animation2{
+  position: relative;
+  animation: animate linear 10s infinite;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+  
+}
+/* animation end */

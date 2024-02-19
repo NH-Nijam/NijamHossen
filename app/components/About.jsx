@@ -8,9 +8,6 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa6";
 // iconts end 
-// header image start
-import pc from '../img/apple-606761_1280.jpg'
-// header image emd
 
 // swper start 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -73,49 +70,49 @@ const Aboutpage = () => {
                     className="md:w-[400px] md:h-[500px] w-[200px] h-[300px]"
                 >
                     <SwiperSlide className='bg-red-600 rounded-lg md:p-5 p-3 '>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/1.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>Web-Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-blue-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/2.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>Front-end Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-orange-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/3.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>React Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-yellow-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/4.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>Web-Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-sky-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/5.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>Front-end Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-cyan-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/1.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>React Developer</span>
                         </h3>
                     </SwiperSlide>
                     <SwiperSlide className='bg-green-600 rounded-lg md:p-5 p-3'>
-                        <Image src={pc} width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
+                        <Image src='/images/2.jpg' width={500} height={500} alt='Image 1' className='w-full md:h-[260px] rounded-lg hover:scale-105 duration-500' />
                         <h3 className='mt-10 flex flex-col text-center text-white'>
                             <span className='md:text-2xl text-xl font-semibold'>MD.Nijam Hossen</span>
                             <span className='md:text-xl text-base font-medium'>Web-Developer</span>

@@ -7,11 +7,8 @@ import { IoClose } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
 import { FaDiagramProject } from "react-icons/fa6";
 import { RiContactsBookFill } from "react-icons/ri";
-
-
 import { IoIosSunny } from "react-icons/io";
 import { useTheme } from 'next-themes';
-
 
 
 const Navbar = () => {
@@ -22,7 +19,7 @@ const Navbar = () => {
         setShow(!show)
     }
     return (
-        <header className={` sticky top-0  z-10  border-b-2 ${theme === 'light' ? 'border-gray-200 bg-gray-100 text-black opacity-80': 'border-gray-900 bg-black opacity-80 text-white'} `}>
+        <header className={` sticky top-0  z-10  border-b-2 ${theme === 'light' ? 'border-gray-200 bg-gray-100 text-black shadow-xl  ': 'border-gray-900 bg-black text-white shadow-xl shadow-gray-900'} `}>
             <nav className='container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between '>
                 <div>
                     <Link href="/">
