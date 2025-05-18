@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
     "antd": "^5.12.6",
     "aos": "^3.0.0-beta.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "daisyui": "^5.0.35",
+    "emailjs-com": "^3.2.0",
     "lucide-react": "^0.314.0",
+    "motion": "^12.12.1",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
     "react": "^18",
