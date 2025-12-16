@@ -4,7 +4,6 @@ import html from '../icons/html.png'
 import css from '../icons/css.png'
 import js from '../icons/java.png'
 import tailwind from '../icons/tailwind.png'
-import bootstrap from '../icons/bootstrap.png'
 import react from '../icons/reactjs.png'
 import next from '../icons/next.png'
 import animation from '../icons/framermotion.png'
@@ -23,7 +22,6 @@ const Skill = () => {
                 <SkillCard name='CSS' icons ={css}/>
                 <SkillCard name='JAVASCRIPT' icons ={js}/>
                 <SkillCard name='TAILWIND CSS' icons ={tailwind}/>
-                <SkillCard name='BOOTSTRAP' icons ={bootstrap}/>
                 <SkillCard name='REACT JS' icons ={react}/>
                 <SkillCard name='NEXT JS' icons ={next}/>
                 <SkillCard name='FRAMER MOTION' icons ={animation}/>
