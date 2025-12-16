@@ -4,7 +4,7 @@ import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-gray-900 text-white ">
+    <div>
       <Navbar />
       <div className="container">
         {children}
