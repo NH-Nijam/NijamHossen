@@ -7,73 +7,71 @@ html {
 }
 
 @layer utilities {
-  .nav{
-    @apply relative  text-xl ;
+  .nav {
+    @apply relative  text-xl;
   }
-  .nav::after{
-    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500
+  .nav::after {
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[0%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500;
   }
-  .nav:hover::after{
-    @apply w-[100%]
-  }
-
-}
-
-@layer utilities{
-  .dav{
-    @apply text-orange-600 text-xl font-bold relative;   
-  }
-  .dav::after{
-    @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500
+  .nav:hover::after {
+    @apply w-[100%];
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@layer utilities {
+  .dav {
+    @apply text-orange-600 text-xl font-bold relative;
+  }
+  .dav::after {
+    @apply content-[''] bg-orange-600 absolute h-[2px] w-[100%] left-0 lg:-bottom-[26px] -bottom-3 rounded-full duration-500;
+  }
+}
 
- /* profile section form  */
-.profile{
-    font-family: 'Libre Baskerville', serif;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+/* profile section form  */
+.profile {
+  font-family: "Libre Baskerville", serif;
 }
-.profile .ant-form-item-label{
-    @apply !text-lg !font-bold
+.profile .ant-form-item-label {
+  @apply !text-lg !font-bold;
 }
-.profile .ant-input{
-    @apply !px-3 !py-2 !rounded-none
+.profile .ant-input {
+  @apply !px-3 !py-2 !rounded-none;
 }
-.ant-btn{
-  @apply w-fit px-4 mt-4  border outline-none shadow-none bg-blue-600 text-white hover:bg-orange-600
+.ant-btn {
+  @apply w-fit px-4 mt-4  border outline-none shadow-none bg-blue-600 text-white hover:bg-orange-600;
 }
-.bg1:hover{
-  @apply bg-[#7a63ec] text-white 
+.bg1:hover {
+  @apply bg-[#7a63ec] text-white;
 }
-.bg2:hover{
-  @apply bg-[#ff6400] text-white 
+.bg2:hover {
+  @apply bg-[#ff6400] text-white;
 }
 
 /* animation start  */
-.animation{
+.animation {
   position: relative;
   animation: animate linear 2s infinite;
 }
-.animation2{
+.animation2 {
   position: relative;
   animation: animate linear 10s infinite;
 }
 @keyframes animate {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
-
 }
 /* animation end */
 /* ---break---  */
 @layer base {
   .theme {
     --animate-meteor: meteor 5s linear infinite;
-    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+    --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
   }
 }
 /* ---break---  */
@@ -88,40 +86,61 @@ html {
 /* ---break---  */
 @theme inline {
   @keyframes meteor {
-  0% {
-    transform: rotate(var(--angle)) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;
-    }
-  }
-  @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
-    }
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
     }
   }
   @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
     }
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
     }
   }
   @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
     }
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
     }
   }
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+}
+
+.input-style {
+  border: 2px solid #a3a3a3;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  width: 100%;
+  color: #000;
+}
+.input-style:focus {
+  border-color: #16a34a;
 }

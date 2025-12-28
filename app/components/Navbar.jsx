@@ -9,12 +9,12 @@ import { FaDiagramProject } from "react-icons/fa6";
 import { RiContactsBookFill } from "react-icons/ri";
 import { IoIosSunny } from "react-icons/io";
 import { IoMoonOutline } from "react-icons/io5";
-import { CoolMode } from "@/components/magicui/cool-mode";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const pathName = usePathname();
   const [isDark, setIsDark] = useState(false);
+  const [activeLink, setActiveLink] = useState("/"); // default active link
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -40,25 +40,30 @@ const Navbar = () => {
   const handler = () => {
     setShow(!show);
   };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setShow(false); // close mobile menu on click
+  };
+
   return (
-    <header
-      className={` sticky top-0 z-10  border-b-2  py-3 bg-gray-900 border-gray-700`}
-    >
-      <nav className="container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between ">
+    <header className="sticky top-0 z-10 border-b-2 py-3 bg-gray-900 border-gray-700">
+      <nav className="container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between">
         <div>
-          <Link href="/">
+          <Link href="#">
             <i className="flex gap-2 text-[30px] font-bold ">
               <span className="text-orange-600 ">Nijam</span>
               <span>Hossen</span>
             </i>
           </Link>
         </div>
-        <div className="lg:flex hidden gap-10 ">
+
+        {/* Desktop Menu */}
+        <div className="lg:flex hidden gap-10">
           <Link
+            onClick={() => handleLinkClick("/")}
             className={`${
-              pathName === "/"
-                ? "dav"
-                : "hover:text-orange-600  underline-orange-600  duration-500 nav"
+              activeLink === "/" ? "dav" : "hover:text-orange-600 underline-orange-600 duration-500 nav"
             }`}
             href="/"
           >
@@ -66,106 +71,100 @@ const Navbar = () => {
           </Link>
 
           <Link
+            onClick={() => handleLinkClick("#projects")}
             className={`${
-              pathName === "/MyProjects"
+              activeLink === "#projects"
                 ? "dav"
-                : "hover:text-orange-600 duration-500 nav"
+                : "hover:text-orange-600 underline-orange-600 duration-500 nav"
             }`}
-            href="/MyProjects"
+            href="#projects"
           >
             My Projects
           </Link>
 
           <Link
+            onClick={() => handleLinkClick("#contacts")}
             className={`${
-              pathName === "/Contact"
+              activeLink === "#contacts"
                 ? "dav"
-                : "hover:text-orange-600 duration-500 nav"
+                : "hover:text-orange-600 underline-orange-600 duration-500 nav"
             }`}
-            href="/Contact"
+            href="#contacts"
           >
             Contact
           </Link>
         </div>
-        {/* small device start */}
-        <div className=" lg:hidden flex gap-5  ">
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden flex gap-5">
           <button
             onClick={toggleTheme}
-            className=" px-1 py-1 rounded-2xl lg:flex lg:items-center hidden"
+            className="px-1 py-1 rounded-2xl hidden lg:flex lg:items-center"
           >
             {isDark ? <IoMoonOutline size={25} /> : <IoIosSunny size={25} />}
           </button>
 
-          <div onClick={handler} className="cursor-pointer lg:hidden relative">
+          <div onClick={handler} className="cursor-pointer relative">
             <FaBars size={30} />
 
             <div
               className={
                 show
-                  ? `fixed left-0 top-0 md:w-[40%] w-[70%]  h-screen md:px-10 px-3 ease-in duration-500 `
-                  : `fixed left-[-100%] top-0  h-screen ease-out duration-500`
+                  ? `fixed left-0 top-0 md:w-[40%] w-[70%] h-screen md:px-10 px-3 ease-in duration-500 bg-gray-900`
+                  : `fixed left-[-100%] top-0 h-screen ease-out duration-500 bg-gray-900`
               }
             >
-              <div onClick={handler} className="cursor-pointer ">
-                <div className="flex items-center justify-end h-[60px]   ">
+              <div onClick={handler} className="cursor-pointer">
+                <div className="flex items-center justify-end h-[60px]">
                   <IoClose size={30} />
                 </div>
-                <div className="mt-16  flex gap-10 flex-col text-2xl">
+                <div className="mt-16 flex gap-10 flex-col text-2xl">
                   <div
-                    className={`${
-                      pathName === "/"
-                        ? "text-orange-600  flex items-center gap-8 "
-                        : "nav flex items-center gap-8"
+                    className={`flex items-center gap-8 ${
+                      activeLink === "/" ? "text-orange-600" : ""
                     }`}
                   >
                     <FaHome />
                     <Link
-                      className={`${
-                        pathName === "/"
-                          ? "dav"
-                          : "hover:text-orange-600  underline-orange-600  duration-500 nav"
-                      }`}
+                      onClick={() => handleLinkClick("/")}
                       href="/"
+                      className={`${
+                        activeLink === "/" ? "dav" : "hover:text-orange-600 underline-orange-600 duration-500 nav"
+                      }`}
                     >
                       Home
                     </Link>
                   </div>
 
                   <div
-                    className={`${
-                      pathName === "/MyProjects"
-                        ? "text-orange-600  flex items-center gap-8 "
-                        : "nav flex items-center gap-8"
+                    className={`flex items-center gap-8 ${
+                      activeLink === "#projects" ? "text-orange-600" : ""
                     }`}
                   >
                     <FaDiagramProject />
                     <Link
+                      onClick={() => handleLinkClick("#projects")}
+                      href="#projects"
                       className={`${
-                        pathName === "/MyProjects"
-                          ? "dav"
-                          : "hover:text-orange-600  underline-orange-600  duration-500 nav"
+                        activeLink === "#projects" ? "dav" : "hover:text-orange-600 underline-orange-600 duration-500 nav"
                       }`}
-                      href="/MyProjects"
                     >
                       My Projects
                     </Link>
                   </div>
 
                   <div
-                    className={`${
-                      pathName === "/Contact"
-                        ? "text-orange-600  flex items-center gap-8 "
-                        : "nav flex items-center gap-8"
+                    className={`flex items-center gap-8 ${
+                      activeLink === "#contacts" ? "text-orange-600" : ""
                     }`}
                   >
                     <RiContactsBookFill />
                     <Link
+                      onClick={() => handleLinkClick("#contacts")}
+                      href="#contacts"
                       className={`${
-                        pathName === "/Contact"
-                          ? "dav"
-                          : "hover:text-orange-600  underline-orange-600  duration-500 nav"
+                        activeLink === "#contacts" ? "dav" : "hover:text-orange-600 underline-orange-600 duration-500 nav"
                       }`}
-                      href="/Contact"
                     >
                       Contact
                     </Link>
@@ -175,8 +174,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        {/* small device end */}
       </nav>
     </header>
   );

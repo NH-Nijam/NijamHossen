@@ -1,143 +1,170 @@
-'use client'
-import Image from 'next/image';
-import React, { useState } from 'react';
-import contactImg from '../img/apple-606761_1280.jpg';
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import contactImg from "../img/apple-606761_1280.jpg";
+import Swal from "sweetalert2";
+import Link from "next/link";
+import emailjs from "emailjs-com";
 import { FiGithub } from "react-icons/fi";
 import { FaFacebookF, FaLinkedinIn, FaPinterestP } from "react-icons/fa6";
-import Swal from 'sweetalert2';
-import Link from 'next/link';
-import emailjs from 'emailjs-com';
 
 const ContactPage = () => {
-    const [message, setMessage] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-    const formHandler = (event) => {
-        event.preventDefault();
-        const form = event.target;
+  const formHandler = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
 
-        emailjs.sendForm(
-            'Nijam123@#',    // replace with your EmailJS Service ID
-            'template_h116gpx',   // replace with your EmailJS Template ID
-            form,
-            'OUrXEEwqvgroFFY0I'     // replace with your EmailJS Public Key
-        ).then(
-            (result) => {
-                console.log(result.text);
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Message sent successfully!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                form.reset();
-            },
-            (error) => {
-                console.error(error.text);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                });
-            }
-        );
+    // 🛑 Honeypot spam check
+    if (form.botcheck.value) return;
+
+    setIsLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      Swal.fire({
+        icon: "success",
+        title: "Message sent!",
+        text: "Thanks for contacting me 😊",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      form.reset();
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    return (
-        <div className='my-20 '>
-            <h1 data-aos="fade-down" className='text-3xl font-semibold text-center decoration-wavy underline tracking-[3px] '>Contact Me</h1>
-            <div className='mt-20 flex lg:flex-row flex-col gap-10 justify-center items-center'>
-                {/* Contact Info */}
-                <div data-aos="fade-right" className='lg:w-2/5 w-full md:p-10 p-4 shadow-lg shadow-orange-600 rounded-b-xl'>
-                    <div className='w-full md:h-[300px] rounded-lg'>
-                        <Image src={contactImg} width={500} height={500} alt='image not found' className='hover:scale-105 duration-500 rounded-lg w-full h-full' />
-                    </div>
-                    <div className='md:mt-10 mt-5'>
-                        <h2 className='md:text-3xl text-2xl font-semibold'>MD Nijam Hossen</h2>
-                        <h3 className='md:text-xl text-base font-medium'>Front-end Developer</h3>
-                        <p className='md:mt-5 mt-2 text-justify opacity-80'>I am available for freelance or full-time positions. Contact me and let's talk.</p>
-                    </div>
-                    <div className='mt-10'>
-                        <h2 className='text-2xl opacity-60'>CONNECT WITH ME</h2>
-                        <div className='mt-10 flex 2xl:gap-10 md:gap-7 gap-4 justify-center lg:justify-between'>
-                            <Link href='https://github.com/NH-Nijam' target='_blank'>
-                                <div className='icon-style'><FiGithub className='icon' /></div>
-                            </Link>
-                            <Link href='https://www.facebook.com/profile.php?id=100009625237790' target='_blank'>
-                                <div className='icon-style'><FaFacebookF className='icon' /></div>
-                            </Link>
-                            <Link href='https://www.linkedin.com/in/nijam-hossen-789081264/' target='_blank'>
-                                <div className='icon-style'><FaLinkedinIn className='icon' /></div>
-                            </Link>
-                            <Link href='https://www.pinterest.com/login/' target='_blank'>
-                                <div className='icon-style'><FaPinterestP className='icon' /></div>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div id="contacts" className=" pt-[130px]">
+      <h1
+        data-aos="fade-down"
+        className="text-3xl font-semibold text-center underline decoration-wavy tracking-[3px]"
+      >
+        Contact Me
+      </h1>
 
-                {/* Contact Form */}
-                <div data-aos="fade-left" className='w-full md:p-10 p-3 shadow-lg shadow-orange-600 rounded-b-xl'>
-                    <form onSubmit={formHandler} className='flex flex-col gap-5'>
-                        <div className='grid md:grid-cols-2 gap-5'>
-                            <div className='flex flex-col gap-2'>
-                                <label htmlFor="name">Name</label>
-                                <input type="text" name='name' required placeholder='Type Name' className='input-style' />
-                            </div>
-                            <div className='flex flex-col gap-2'>
-                                <label htmlFor="number">Number</label>
-                                <input type="number" name='number' required placeholder='Number' className='input-style' />
-                            </div>
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor="email">Email</label>
-                            <input type="email" required name='email' placeholder='Type email' className='input-style' />
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor="subject">Subject</label>
-                            <input type="text" name='subject' required placeholder='Type Subject' className='input-style' />
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor="message">Message</label>
-                            <textarea name="message" required placeholder='Type message...' rows="6" className='input-style' />
-                        </div>
-                        <button type='submit' className='bg-orange-600 rounded-md p-3 text-xl font-semibold text-white'>Send Message</button>
-                    </form>
-                </div>
+      <div className="mt-20 flex lg:flex-row flex-col gap-10 justify-center items-stretch">
+        {/* CONTACT INFO */}
+        <div
+          data-aos="fade-right"
+          className="lg:w-2/5 w-full md:p-10 p-4 shadow-lg shadow-orange-600 rounded-b-xl flex flex-col"
+        >
+          <div className="w-full h-[300px]">
+            <Image
+              src={contactImg}
+              alt="contact"
+              className="rounded-lg w-full h-full object-cover hover:scale-105 duration-500"
+            />
+          </div>
+
+          <div className="mt-6 flex-grow">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              MD Nijam Hossen
+            </h2>
+            <h3 className="text-base md:text-xl font-medium">MERN Developer</h3>
+            <p className="mt-4 opacity-80 text-justify">
+              I am available for freelance or full-time positions. Contact me
+              and let's talk.
+            </p>
+          </div>
+
+          <div className="mt-6">
+            <h2 className="text-xl opacity-60">CONNECT WITH ME</h2>
+            <div className="mt-6 flex gap-4 justify-between">
+              <SocialLink href="https://github.com/NH-Nijam">
+                <FiGithub />
+              </SocialLink>
+              <SocialLink href="https://facebook.com">
+                <FaFacebookF />
+              </SocialLink>
+              <SocialLink href="https://linkedin.com">
+                <FaLinkedinIn />
+              </SocialLink>
+              <SocialLink href="https://pinterest.com">
+                <FaPinterestP />
+              </SocialLink>
+            </div>
+          </div>
+        </div>
+
+        {/* CONTACT FORM */}
+        <div
+          data-aos="fade-left"
+          className=" w-full md:p-10 p-4 shadow-lg shadow-orange-600 rounded-b-xl flex flex-col"
+        >
+          <form
+            onSubmit={formHandler}
+            className="flex flex-col gap-5 flex-grow"
+          >
+            <input
+              type="text"
+              name="botcheck"
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <Input label="Name" name="name" />
+              <Input label="Number" name="number" type="number" />
             </div>
 
-            {/* Reusable styles */}
-            <style jsx>{`
-                .input-style {
-                    border: 2px solid #a3a3a3;
-                    padding: 0.5rem;
-                    border-radius: 0.5rem;
-                    outline: none;
-                    width: 100%;
-                }
-                .input-style:focus {
-                    border-color: #16a34a;
-                }
-                .icon-style {
-                    width: 50px;
-                    height: 50px;
-                    background: white;
-                    box-shadow: 0 0 10px #ea580c;
-                    border-radius: 9999px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: transform 0.3s ease;
-                }
-                .icon-style:hover {
-                    transform: scale(1.1);
-                }
-                .icon {
-                    font-size: 1.75rem;
-                }
-            `}</style>
+            <Input label="Email" name="email" type="email" />
+            <Input label="Subject" name="subject" />
+
+            <div className="flex flex-col gap-2 flex-grow">
+              <label>Message</label>
+              <textarea
+                name="message"
+                rows={6}
+                required
+                className="input-style h-full resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-orange-600 mt-auto rounded-md p-3 text-xl font-semibold text-white disabled:opacity-60"
+            >
+              {isLoading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
+
+const Input = ({ label, ...props }) => (
+  <div className="flex flex-col gap-2">
+    <label>{label}</label>
+    <input {...props} required className="input-style" />
+  </div>
+);
+
+const SocialLink = ({ href, children }) => (
+  <Link
+    href={href}
+    target="_blank"
+    className="w-10 h-10 rounded-full bg-white text-orange-600 flex items-center justify-center hover:bg-orange-600 hover:text-white duration-300"
+  >
+    {children}
+  </Link>
+);
 
 export default ContactPage;
