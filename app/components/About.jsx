@@ -25,7 +25,7 @@ const Aboutpage = () => {
   ];
 
   return (
-    <div className="z-0 lg:h-[90vh] h-[100vh] flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-center justify-between px-4 md:px-10 lg:px-0">
+    <div className="z-0 lg:h-[90vh] md:h-[100vh] mt-10 flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-center justify-between px-4 md:px-10 lg:px-0">
       {/* LEFT SECTION */}
       <div className="lg:w-1/2 w-full flex flex-col gap-5 text-center lg:text-start">
         <TextAnimate
@@ -100,7 +100,7 @@ const Aboutpage = () => {
         </p>
 
         {/* SOCIAL LINKS */}
-        <div className="mt-6 flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
+        <div className="md:mt-6 mt-4 flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
           {[
             {
               href: "https://github.com/NH-Nijam",
@@ -139,7 +139,7 @@ const Aboutpage = () => {
         </div>
 
         {/* RESUME BUTTON */}
-        <div className="mt-10 flex justify-center lg:justify-start">
+        <div className="md:mt-10 mt-5 flex justify-center lg:justify-start">
           <Link
             href="https://drive.google.com/file/d/1oCs5h72fffjdp2thyhFQxPgfJU2ZizMY/view?usp=sharing"
             target="_blank"

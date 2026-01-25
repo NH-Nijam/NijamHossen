@@ -49,7 +49,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div id="contacts" className=" pt-[130px]">
+    <div id="contacts" className="md:pt-[130px] pt-14">
       <h1
         data-aos="fade-down"
         className="text-3xl font-semibold text-center underline decoration-wavy tracking-[3px]"
@@ -57,7 +57,7 @@ const ContactPage = () => {
         Contact Me
       </h1>
 
-      <div className="mt-20 flex lg:flex-row flex-col gap-10 justify-center items-stretch">
+      <div className="md:mt-14 mt-8 flex lg:flex-row flex-col gap-10 justify-center items-stretch">
         {/* CONTACT INFO */}
         <div
           data-aos="fade-right"
@@ -119,12 +119,12 @@ const ContactPage = () => {
             />
 
             <div className="grid md:grid-cols-2 gap-5">
-              <Input label="Name" name="name" />
-              <Input label="Number" name="number" type="number" />
+              <Input label="Name" name="name" placeholder="Enter your name" />
+              <Input label="Number" name="number" type="number" placeholder="Enter your phone number" />
             </div>
 
-            <Input label="Email" name="email" type="email" />
-            <Input label="Subject" name="subject" />
+            <Input label="Email" name="email" type="email" placeholder="Enter your email" />
+            <Input label="Subject" name="subject" placeholder="Enter your subject" />
 
             <div className="flex flex-col gap-2 flex-grow">
               <label>Message</label>
@@ -132,6 +132,7 @@ const ContactPage = () => {
                 name="message"
                 rows={6}
                 required
+                placeholder="Write message"
                 className="input-style h-full resize-none"
               />
             </div>
