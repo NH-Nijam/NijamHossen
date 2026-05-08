@@ -9,14 +9,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/material": "^7.1.0",
-    "antd": "^5.12.6",
-    "aos": "^3.0.0-beta.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "daisyui": "^5.0.35",
     "emailjs-com": "^3.2.0",
     "lucide-react": "^0.314.0",
     "motion": "^12.12.1",
@@ -26,7 +20,6 @@
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-simple-typewriter": "^5.0.1",
-    "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.0",
